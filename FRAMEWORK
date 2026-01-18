@@ -1,0 +1,108 @@
+# CAS 2.0 Framework
+
+## Purpose
+
+CAS 2.0 is an evaluation framework for studying the **long-horizon behavior of adaptive systems** under sustained stochastic exposure.
+
+The framework is designed to surface behaviors that do not reliably appear in short-horizon or intervention-heavy evaluations, including gradual drift, variance accumulation, and changes in recovery dynamics over time.
+
+CAS 2.0 treats **time itself as a stressor**, rather than assuming meaningful risk manifests early.
+
+---
+
+## What CAS 2.0 Is
+
+CAS 2.0 is:
+- an evaluation framework
+- a methodology for longitudinal analysis
+- a tool for studying persistence and degradation under fixed conditions
+
+It is designed to observe behavior, not to improve it.
+
+---
+
+## What CAS 2.0 Is Not
+
+CAS 2.0 is explicitly **not**:
+- a training system
+- an optimization framework
+- a performance benchmark
+- a tuning or control loop
+- a deployment architecture
+
+No claims of improved performance, safety, or alignment are made by the framework itself.
+
+---
+
+## Core Framework Constraints
+
+CAS 2.0 enforces the following constraints across evaluations:
+
+- **Frozen parameters**  
+  All parameters are declared prior to execution and remain fixed for the duration of a run.
+
+- **No intervention**  
+  No mid-run tuning, resets, or corrective actions are permitted.
+
+- **Sustained stochastic exposure**  
+  Noise is continuously injected according to a predefined process.
+
+- **Time as the independent variable**  
+  Differences across evaluation phases are attributed to increased horizon length, not configuration changes.
+
+These constraints are intentionally strict to isolate temporal effects.
+
+---
+
+## Adaptive Response vs Optimization
+
+Adaptive mechanisms within CAS 2.0 are not treated as learning or optimization processes.
+
+Response parameters (e.g., gain, period) define **how** a system reacts to incoming noise.  
+They do not evolve and are not modified based on outcomes.
+
+Observed behavior informs **what to evaluate next**, not **how to tune the system**.
+
+---
+
+## Evaluation Focus
+
+CAS 2.0 evaluations emphasize:
+- boundedness over time
+- variance structure under prolonged exposure
+- persistence and degradation of recovery behavior
+- absence of abrupt collapse despite increasing exposure
+
+The framework is intentionally agnostic to task performance or reward maximization.
+
+---
+
+## Interpretability and Auditability
+
+CAS 2.0 prioritizes:
+- clear experimental boundaries
+- traceable evaluation phases
+- reproducible comparison logic
+- explicit documentation of constraints
+
+Manual execution and logging are used to preserve interpretability and prevent accidental intervention.
+
+---
+
+## Scope Limitations
+
+CAS 2.0 does not attempt to model:
+- adversarial interaction
+- non-stationary objectives
+- real-world deployment complexity
+- human-in-the-loop systems
+
+Results should be interpreted as **methodological observations**, not guarantees of system safety or reliability.
+
+---
+
+## Relation to Published Artifacts
+
+This document describes the conceptual framework underlying CAS 2.0.
+
+Detailed phase records, experimental summaries, and archived artifacts are maintained separately via OSF and associated preprints.
