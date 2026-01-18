@@ -10,5 +10,5 @@ It does NOT contain:
 - deployable artifacts
 
 The CAS 2.0 implementation is intentionally not publicly released.
-Access may be explored through academic review or ethical research
-collaboration.
+Implementation access may be explored through academic review or
+research collaboration under stated use constraints.
