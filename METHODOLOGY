@@ -1,0 +1,161 @@
+Methodology
+
+This document describes the experimental methodology used in CAS 2.0.
+It defines the evaluation constraints, execution discipline, and comparison logic
+used to study long-horizon behavior under frozen parameters.
+
+CAS 2.0 is an evaluation framework, not a training or optimization system.
+
+---
+
+## Experimental Unit
+
+The fundamental experimental unit in CAS 2.0 is a **single run** defined by:
+- a fixed configuration
+- a fixed random seed
+- a fixed response regime
+- a predefined time horizon
+
+Each run is executed from initialization through completion without restarts or state modification.
+
+---
+
+## Frozen Configuration
+
+All parameters are declared prior to execution and remain fixed for the duration
+of a run.
+
+This includes, but is not limited to:
+- response parameters (e.g., gain, period)
+- noise injection settings
+- thresholds used for boundedness and recovery analysis
+
+No parameters are adjusted in response to observed behavior,
+either within a run or across runs in the same experimental batch.
+
+
+---
+
+## Intervention Prohibition
+
+CAS 2.0 prohibits:
+- mid-run tuning
+- resets
+- corrective actions
+- conditional branching based on intermediate outcomes
+
+Once a run begins, the system is allowed to evolve solely according to its frozen
+configuration and incoming stochastic input.
+
+---
+
+## Stochastic Exposure
+
+Each run is subjected to continuous stochastic input according to a predefined
+noise process.
+
+The noise process:
+- remains constant across runs within an experimental batch
+- is not adapted or conditioned on system state
+- serves as a persistent external stressor
+
+Noise magnitude is not treated as the primary independent variable in Test D.
+Elapsed time is treated as the primary independent variable.
+
+---
+
+## Time Horizons
+
+CAS 2.0 evaluates identical configurations at increasing time horizons.
+
+In Test D, horizons include:
+- 50,000 steps
+- 100,000 steps
+- 200,000 steps
+
+All comparisons across horizons use identical configurations.
+Observed differences are attributed solely to increased exposure duration.
+
+---
+
+## Execution Discipline
+
+All runs are executed manually, line by line, under direct operator supervision and stepwise control, without automated orchestration.
+
+This execution discipline is intentional and serves to:
+- prevent accidental intervention
+- avoid hidden retries or automation artifacts
+- preserve traceability of each run
+- ensure that results reflect system behavior rather than orchestration logic
+
+No batch schedulers, automated reruns, or adaptive scripts are used.
+
+---
+
+## Comparison Logic
+
+Comparisons in CAS 2.0 are performed:
+- across time horizons for the same configuration
+- across response regimes for the same seed
+- across seeds under identical regimes
+
+Valid comparisons require:
+- identical frozen parameters
+- identical noise processes
+- identical evaluation criteria
+
+Cross-experiment comparisons that violate these constraints are considered invalid.
+
+---
+
+## Observation vs Tuning
+
+Observed behavior is used to determine **what to evaluate next**, not **how to tune
+the system**.
+
+For example:
+- increased horizon length may be selected for further evaluation
+- additional seeds may be added for coverage
+
+No observed outcome triggers parameter modification.
+
+---
+
+## Metrics and Interpretation
+
+CAS 2.0 focuses on qualitative and distributional properties rather than point
+performance metrics.
+
+Primary observations include:
+- boundedness over time
+- variance accumulation
+- recovery persistence and distribution shape
+- absence of abrupt failure modes
+
+CAS 2.0 does not claim performance improvement, safety guarantees, or alignment
+certification.
+
+---
+
+## Reproducibility Scope
+
+This methodology supports:
+- reproducible comparison logic
+- external audit of experimental design
+- independent validation given access to implementation
+
+Public artifacts document structure and constraints.
+Implementation access is considered separately through academic review or
+collaboration under stated use constraints.
+
+---
+
+## Methodological Limits
+
+The methodology does not account for:
+- adversarial interaction
+- online learning or retraining
+- non-stationary objectives
+- deployment-specific feedback loops
+
+Results should be interpreted as methodological observations within these limits.
