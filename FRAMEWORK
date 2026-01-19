@@ -10,6 +10,15 @@ CAS 2.0 treats **time itself as a stressor**, rather than assuming meaningful ri
 
 ---
 
+## Capability vs Behavioral Evaluation
+
+CAS 2.0 does not evaluate task capability, reward maximization, or functional correctness.
+
+It evaluates behavioral properties that emerge under prolonged exposure to stochastic stress, independent of task performance.
+
+The framework is intentionally agnostic to what a system is “trying to do.”
+
+
 ## What CAS 2.0 Is
 
 CAS 2.0 is:
@@ -68,7 +77,7 @@ Observed behavior informs **what to evaluate next**, not **how to tune the syste
 ## Evaluation Focus
 
 CAS 2.0 evaluations emphasize:
-- boundedness over time
+- whether behavior remains bounded over time
 - variance structure under prolonged exposure
 - persistence and degradation of recovery behavior
 - absence of abrupt collapse despite increasing exposure
