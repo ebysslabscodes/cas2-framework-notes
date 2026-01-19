@@ -127,7 +127,7 @@ CAS 2.0 focuses on qualitative and distributional properties rather than point
 performance metrics.
 
 Primary observations include:
-- boundedness over time
+- whether behavior remains bounded over time
 - variance accumulation
 - recovery persistence and distribution shape
 - absence of abrupt failure modes
